@@ -1,4 +1,4 @@
-const {mongoose} = require('./db/mongoose');
+// const {mongoose} = require('./db/mongoose');
 
 const express = require('express')
 const app = express()
@@ -9,8 +9,8 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 const request = require('request')
 
-const csv = require('csvtojson')
-const csvFilePath = 'properties-94102.csv'
+
+
 const port = process.env.PORT || 3000;
 
 
@@ -18,7 +18,7 @@ app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 app.get('/', (req, res) => {
-    res.render()
+    res.render('home')
 })
 
 

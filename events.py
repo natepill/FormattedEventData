@@ -29,6 +29,7 @@ class QuotesSpider(scrapy.Spider):
     def parse(self, response):
         event = Event()
         event['tite'] = response.css('eds-media-card-content__primary-content').extract()
+        event['date'] =
         # item['date'] = response.css('//title/text()').extract()
         # item['location'] = response.css)()
         # item['price'] = self.settings.css('BOT-NAME')
