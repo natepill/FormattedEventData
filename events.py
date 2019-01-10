@@ -11,8 +11,6 @@ class Event(scrapy.Item):
 
 
 
-
-
 class QuotesSpider(scrapy.Spider):
     name = "events"
 
