@@ -40,7 +40,7 @@ class QuotesSpider(scrapy.Spider):
         """ Returns an iterable of requests, can be a list of requests or a generator function"""
 
         urls = [
-            'https://www.eventbrite.com/d/ca--san-francisco/business--events/'
+            'https://www.eventbrite.com/d/ca--san-francisco/all-events/?page=1&tags=Training'
         ]
 
         for url in urls:
@@ -57,6 +57,8 @@ class QuotesSpider(scrapy.Spider):
 
         soup = bso(ul_selector, "lxml")
         unordered_list = soup.find("ul")
+
+        print(unordered_list)
         # print(first_child.findChildren())
         list_of_tags = unordered_list.children
         # print(list_of_tags)
@@ -75,6 +77,12 @@ class QuotesSpider(scrapy.Spider):
             event['price'] = div_container.css('div.eds-media-card-content__sub-content div.eds-media-card-content__sub-content-cropped div.eds-text-bs--fixed.eds-text-color--grey-600.eds-l-mar-top-1::text').extract_first()
 
             return event
+            # all_events.append(event)
+
+
+        # print('ALL EVENTS: ')
+        # print(all_events)
+
 
         # print(all_events)
         # return all_events
