@@ -84,7 +84,6 @@ for index, detail in enumerate(price_text):
         all_prices.append(detail)
 
 ## TODO: Clean price data by only having numerical values or empty strings
-
 # price_pattern3 = re.compile(r'\d+')
 # def clean_prices(list_of_prices):
 #     for price in list_of_prices:
@@ -99,15 +98,8 @@ for index, detail in enumerate(price_text):
 # print(len(event_titles))
 # print(len(locations))
 # print(len(dates))
-#
+
 all_events = zip(event_titles, locations, dates, all_prices) #create an iterator of tuples with each event information
-
-# for event in all_events:
-#     print(event[0])
-
-# item1 = 'item1'
-# item2 = 'item2'
-
 
 
 
@@ -124,7 +116,6 @@ csv_writer.writerow(['title', 'location', 'date', 'time', 'price'])
 
 
 """Parsing for time and date AND writing to csv"""
-
 for event in all_events:
     time_pattern = re.compile(r'\d:\d\d\w\w')
     date_pattern = re.compile(r'\w\w\w, \w\w\w \d\d')
@@ -152,10 +143,9 @@ csv_file.close()
 #  5:00pm', '')
 
 
-
+"""Convert Generated CSV file to a JSON Array """
 
 fieldnames = ('title', 'location', 'date', 'time', 'price')
-
 entries = []
 with open('event_data.csv', 'r') as csvfile:
     #python's standard dict is not guaranteeing any order,
