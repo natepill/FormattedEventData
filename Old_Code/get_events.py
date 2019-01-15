@@ -23,6 +23,7 @@ def construct_url(form_parameters):
 
 def fill_in_none_values(formatted_details):
     date_pattern = re.compile(r'\w\w\w, \w\w\w [0-9]?\d')
+
     # time_pattern = re.compile(r'[0-9]?\d:\d\d\w\w')
     # Will use time_pattern once we've ensured that formatted_details has all indexes filled
 
@@ -60,16 +61,20 @@ def fill_in_none_values(formatted_details):
 
     return formatted_details
 
-                # date = date_pattern.finditer(list_of_events[1])
-                # time = time_pattern.finditer(list_of_events[1])
+
+titles = list()
+dates = list()
+locations = list()
+prices = list()
+
+try:
+    event_titles = soup.find_all('div', class_='card-text--truncated__three')
+except Exception as e:
 
 
 
 
 
-
-
-# print(soup.find_all('li'))
 try:
     event_titles = soup.find_all('div', class_='card-text--truncated__three')
     event_details = soup.find_all('div', class_='eds-text-bs--fixed eds-text-color--grey-600 eds-l-mar-top-1')
@@ -139,28 +144,28 @@ for detail in formatted_details:
 
 
 
-# csv_file = open('event_data.csv', 'w')
-# csv_writer = csv.writer(csv_file)
-# csv_writer.writerow(['title', 'date', 'time', 'location', 'price'])
-#
-#
-#
-# """Taking event details and  list of events """
-# # TODO: Maybe try to clean the data here
-#
-# for event in list_of_events:
-#     time_pattern = re.compile(r'\d:\d\d\w\w')
-#     date_pattern = re.compile(r'\w\w\w, \w\w\w \d\d')
-#     price_pattern = re.compile(r'')
-#
-#     title = list_of_events[0]
-#     date = date_pattern.finditer(list_of_events[1])
-#     time = time_pattern.finditer(list_of_events[1])
-#     location = list_of_events[2]
-#     price = list_of_events[3]
-#     csv_writer.writerow([title, date, time, location, price])
-#
-# csv_file.close()
+csv_file = open('event_data.csv', 'w')
+csv_writer = csv.writer(csv_file)
+csv_writer.writerow(['title', 'date', 'time', 'location', 'price'])
+
+
+
+"""Taking event details and  list of events """
+# TODO: Maybe try to clean the data here
+
+for event in list_of_events:
+    time_pattern = re.compile(r'\d:\d\d\w\w')
+    date_pattern = re.compile(r'\w\w\w, \w\w\w \d\d')
+    price_pattern = re.compile(r'')
+
+    title = list_of_events[0]
+    date = date_pattern.finditer(list_of_events[1])
+    time = time_pattern.finditer(list_of_events[1])
+    location = list_of_events[2]
+    price = list_of_events[3]
+    csv_writer.writerow([title, date, time, location, price])
+
+csv_file.close()
 
 
 
