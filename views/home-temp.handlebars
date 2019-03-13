@@ -28,71 +28,74 @@
  </div>
 
 
-<!-- Form box -->
-<form action="/action_page.php">
-  Location:<br>
-  <input type="text" name="location" value="San Francisco"><br>
-  Pages to Scrape:<br>
-  <input type="text" name="num_of_pages" value="1"><br>
-  Category:<br>
+ <!-- Form box -->
+ <form action="/form-submit">
+   Location:<br>
+   <input type="text" name="location" value="San Francisco"><br>
+   Pages to Scrape:<br>
+   <input type="text" name="num_of_pages" value="1">
+
+   Category:<br>
+   <select>
+     <option value="any_category">Any category</option>
+     <option value="arts">Arts</option>
+     <option value="auto_boat_air">Auto, Boat & Air</option>
+     <option value="business">Business</option>
+     <option value="charity_and_causes">Charity & Causes</option>
+     <option value="family_and_education">Family & Education</option>
+     <option value="film_and_media">Film & Media</option>
+     <option value="food_and_drink">Food & Drink</option>
+     <option value="government">Government</option>
+     <option value="health">Health</option>
+     <option value="hobbies">Hobbies</option>
+     <option value="holiday">Holiday</option>
+     <option value="home_and_lifestyle">Home & Lifestyle</option>
+     <option value="music">Music</option>
+     <option value="school_activities">School Activities</option>
+     <option value="science_and_tech">Science & Tech</option>
+     <option value="spirituality">Spirituality</option>
+     <option value="sports">Sports & Fitness</option>
+     <option value="travel">Travel & Outdoor</option>
+
+  </select></br>
+   Event Type:<br>
   <select>
-    <option value="any_category">Any category</option>
-    <option value="arts">Arts</option>
-    <option value="auto_boat_air">Auto, Boat & Air</option>
-    <option value="business">Business</option>
-    <option value="cha">Charity & Causes</option>
-    <option value="family_and_education">Family & Education</option>
-    <option value="film_and_media">Film & Media</option>
-    <option value="food_and_drink">Food & Drink</option>
-    <option value="government">Government</option>
-    <option value="health">Health</option>
-    <option value="hobbies">Hobbies</option>
-    <option value="holiday">Holiday</option>
-    <option value="home_and_lifestyle">Home & Lifestyle</option>
-    <option value="music">Music</option>
-    <option value="school_activities">School Activities</option>
-    <option value="science_and_tech">Science & Tech</option>
-    <option value="spirituality">Spirituality</option>
-    <option value="sports">Sports & Fitness</option>
-    <option value="travel">Travel & Outdoor</option>
-
+    <option value="appearance">Appearance</option>
+    <option value="attraction">Attraction</option>
+    <option value="class">Class</option>
+    <option value="conference">Conference</option>
+    <option value="convention">Convention</option>
+    <option value="expo">Expo</option>
+    <option value="festival">Festival</option>
+    <option value="gala">Gala</option>
+    <option value="game">Game</option>
+    <option value="networking">Networking</option>
+    <option value="party">Party</option>
+    <option value="performance">Performance</option>
+    <option value="race">Race</option>
+    <option value="rally">Rally</option>
+    <option value="retreat">Retreat</option>
+    <option value="screening">Screening</option>
+    <option value="seminar">Seminar</option>
+    <option value="tour">Tour</option>
+    <option value="tournament">Tournament</option>
  </select></br>
-  Event Type:<br>
+
+ Time Frame:<br>
  <select>
-   <option value="appearance">Appearance</option>
-   <option value="attraction">Attraction</option>
-   <option value="class">Class</option>
-   <option value="conference">Conference</option>
-   <option value="convention">Convention</option>
-   <option value="expo">Expo</option>
-   <option value="festival">Festival</option>
-   <option value="gala">Gala</option>
-   <option value="game">Game</option>
-   <option value="networking">Networking</option>
-   <option value="party">Party</option>
-   <option value="performance">Performance</option>
-   <option value="race">Race</option>
-   <option value="rally">Rally</option>
-   <option value="retreat">Retreat</option>
-   <option value="screening">Screening</option>
-   <option value="seminar">Seminar</option>
-   <option value="tour">Tour</option>
-   <option value="tournament">Tournament</option>
-</select></br>
+  <option value="today">Today</option>
+  <option value="tomorrow">Tomorrow</option>
+  <option value="this_weekend">This weekend</option>
+  <option value="this_week">This week</option>
+  <option value="next_week">Next week</option>
+  <option value="this_month">This month</option>
+ </select></br><br>
 
-Time Frame:<br>
-<select>
- <option value="today">Today</option>
- <option value="tomorrow">Tomorrow</option>
- <option value="this_weekend">This weekend</option>
- <option value="this_week">This week</option>
- <option value="next_week">Next week</option>
- <option value="this_month">This month</option>
-</select></br><br>
+  <input type="submit" value="Submit">
 
- <input type="submit" value="Submit">
+ </form>
 
-</form>
+
 
 
 
