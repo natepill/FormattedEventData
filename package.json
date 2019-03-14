@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "chai": "^4.1.2",
     "chai-http": "^4.2.0",
@@ -19,6 +20,7 @@
     "handlebars-intl": "^1.1.2",
     "method-override": "^3.0.0",
     "mongoose": "^5.3.4",
-    "node-datetime": "^2.1.2"
+    "node-datetime": "^2.1.2",
+    "request": "^2.88.0"
   }
 }
