@@ -26,12 +26,26 @@ app.get('/', (req, res) => {
 
 app.get('/form-submit', (req, res) => {
     const form_data = req.query
-
+    console.log('Form-Data:', form_data);
     // TODO: Error handing w/ Axios
-    axios.post('http://127.0.0.1:5000/', {form_data: form_data });
+    // TODO: Need to make a request to the live link, not local host
+
+    axios.post('http://127.0.0.1:3000/', {form_data: form_data }).then((all_events) => {
+        console.log(all_events);
+    }).catch((err) => console.log(err));
+    // .catch(err => console.log(err))
+
+    // var req = request("https://unconference-api.herokuapp.com/", function (error, response, body) {
+    //   if (!error && response.statusCode == 200) {
+    //     console.log(body);
+    //   }
+    // });
+
+
+    // data: '{"form_data":{"location":"San Francisco","num_of_pages":"1","category":"any_category","event-type":"appearance","time-frame":"today"}}' }
 
     // TODO: Redirect to User's Dashboard
-    // TODO: Look @ Ikey's Authentication middleware in MMYBO project NOTE: (MAY NOT WORK FOR ALL ROUTES) because we are trying to integrate a developer API
+    // TODO: Look @ Ikey's Authentication middleware in MMYBO project NOTE: Devloper's using the API also need to be authenticated
     res.redirect('/');
 })
 
