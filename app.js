@@ -30,17 +30,11 @@ app.get('/form-submit', (req, res) => {
     // TODO: Error handing w/ Axios
     // TODO: Need to make a request to the live link, not local host
 
+    // TODO: How to save t
     axios.post('http://127.0.0.1:3000/', {form_data: form_data }).then((all_events) => {
-        console.log(all_events);
+        console.log(all_events.data[0].Page_1); //Returned Json array of values for Page_1
+
     }).catch((err) => console.log(err));
-    // .catch(err => console.log(err))
-
-    // var req = request("https://unconference-api.herokuapp.com/", function (error, response, body) {
-    //   if (!error && response.statusCode == 200) {
-    //     console.log(body);
-    //   }
-    // });
-
 
     // data: '{"form_data":{"location":"San Francisco","num_of_pages":"1","category":"any_category","event-type":"appearance","time-frame":"today"}}' }
 
