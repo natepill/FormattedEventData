@@ -6,6 +6,11 @@ const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const request = require('request');
 const axios = require('axios');
+//Mongo URI
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/formatted-event-data';
+//Create mongo connection
+const conn = mongoose.createConnection(mongoURI);
+
 
 // const fs = require('fs');
 // const request = require('request')
@@ -19,6 +24,12 @@ app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'handlebars');
+
+
+
+
+
+
 
 app.get('/', (req, res) => {
     res.render('home')
