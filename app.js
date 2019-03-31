@@ -1,5 +1,7 @@
 // const {mongoose} = require('./db/mongoose');
+//GridFS:  https://www.youtube.com/watch?v=EVIGIcm7o2w
 
+const mongoose = require('mongoose');
 const express = require('express')
 const app = express()
 const exphbs = require('express-handlebars');
@@ -11,9 +13,11 @@ const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/formatted-event
 //Create mongo connection
 const conn = mongoose.createConnection(mongoURI);
 
-
 // const fs = require('fs');
 // const request = require('request')
+
+const Card = require('./models/card');
+
 
 const port = process.env.PORT || 5000;
 
@@ -24,9 +28,6 @@ app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'handlebars');
-
-
-
 
 
 
@@ -43,7 +44,12 @@ app.get('/form-submit', (req, res) => {
 
     // TODO: How to save t
     axios.post('http://127.0.0.1:3000/', {form_data: form_data }).then((all_events) => {
-        console.log(all_events.data[0].Page_1); //Returned Json array of values for Page_1
+
+        console.log("All events Page 1:", all_events.data[0].Page_1); //Returned Json array of values for Page_1
+        console.log(all_events.data);
+        // for (i=0; i<all_events.length, i++){
+        //     card = new Card(req.body);
+        // }
 
     }).catch((err) => console.log(err));
 
